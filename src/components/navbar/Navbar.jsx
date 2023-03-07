@@ -6,7 +6,7 @@ import { menuIcon } from "../../helper/iconData";
 const Navbar = ({currentUser,setCurrentUser}) => {
   const [showMenu, setShowMenu] = useState(false);
 
-const logout = {
+const logout = () => {
   setCurrentUser(false);
   sessionStorage.clear()
 }
@@ -19,7 +19,7 @@ const logout = {
       <HamburgerIcon onClick={()=>setShowMenu(!showMenu)}>
         {menuIcon}
         </HamburgerIcon>
-      <Menu showmenu={showMenu}>
+      <Menu showMenu={showMenu}>
         <MenuLink to="/">home</MenuLink>
         <MenuLink to="/about">about</MenuLink>
         {/* <MenuLink to="/register">register</MenuLink>
@@ -37,7 +37,7 @@ const logout = {
         }
       </Menu>
   </Nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
