@@ -1,9 +1,15 @@
 import React from 'react'
-import { Nav } from './Navbar.style'
+import { Logo, Menu, MenuLink, Nav } from './Navbar.style'
 
 const Navbar = () => {
   return (
-    <Nav>Navbar
+    <Nav justify="space-between">
+      <Logo>
+        MTT LİBRARY
+      </Logo>
+      <Menu>
+        <MenuLink to="/">home</MenuLink>
+      </Menu>
   </Nav>
   )
 }
