@@ -46,9 +46,9 @@ export const SearchInput = styled.input`
   ::placeholder {
     text-transform: capitalize;
   }
-  @media (max-width: ${({theme})=> theme.screens.lg}) {
-    border-radius:5px;
-    width:100%;
+  @media (max-width: ${({ theme }) => theme.screens.lg}) {
+    width: 100%;
+    border-radius: 5px;
   }
 `;
 
@@ -64,6 +64,10 @@ export const SelectBox = styled.select`
   border-top-right-radius: 1rem;
   background-color: rgb(255, 255, 255, 0.8);
   border-bottom-right-radius: 1rem;
+  @media (max-width: ${({ theme }) => theme.screens.lg}) {
+    width: 100%;
+    border-radius: 5px;
+  }
 `;
 
 export const HeaderButton = styled.button`
@@ -82,6 +86,7 @@ export const HeaderButton = styled.button`
     background: ${({ theme }) => theme.colors.navbarBgColor};
     transition: all 0.3s ease-in;
   }
+  @media (max-width: ${({ theme }) => theme.screens.lg}) {
+    border-radius: 5px;
+  }
 `;
-
-
