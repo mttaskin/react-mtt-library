@@ -1,17 +1,25 @@
-import React from "react";
-import Header from "../../components/header/Header";
-import { HomeContainer, HomeImg, MainContainer } from "./Home.style";
+import React, { useState } from 'react'
+import { HomeContainer, HomeImg, MainContainer } from './Home.style'
+import Header from '../../components/header/Header'
 import homeImg from "../../assets/books.jpg";
+import axios from 'axios';
 
 const Home = () => {
+  // const printType = ["all","books","magazines"]
+  const [query,setQuery] = useState("")
+  const [selectType,setSelectType] = useState("all")
+  const [myData,setMyData] = useState([])
 
-const [query, setQuery] = useState("")
-const [selectType, setSelectType] = useState("all")
-const [myData, setMyData] = useState([])
+const APP_KEY = process.env.REACT_APP_apiKey;
+const url = `https://www.googleapis.com/books/v1/volumes?q=${query}&printType=${printType}&key=${APP_KEY}`;
+const getData = async () => {
+  try {
+    const {data}=await axios.get(url)
 
-
-
-
+  } catch (error) {
+    
+  }
+}
 
   return (
     <HomeContainer>
@@ -23,9 +31,12 @@ const [myData, setMyData] = useState([])
 
       <MainContainer>
 
-      </MainContainer>
-    </HomeContainer>
-  );
-};
 
-export default Home;
+
+      </MainContainer>
+
+    </HomeContainer>
+  )
+}
+
+export default Home
