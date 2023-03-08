@@ -1,13 +1,17 @@
 import React from 'react'
-import { HomeContainer } from './Home.style'
-import HomeImg from "../"
-
+import Header from '../../components/header/Header'
+import { HomeContainer, HomeImg, MainContainer } from './Home.style'
+import homeImg from"../../assets/books.jpg"
 const Home = () => {
   return (
-    <HomeContainer>
-
-    </HomeContainer>
+<HomeContainer>
+  <Header/>
+  <HomeImg>
+<img src={homeImg} alt="books" />
+  </HomeImg>
+  <MainContainer>
+  </MainContainer>
+</HomeContainer>
   )
 }
-
 export default Home
